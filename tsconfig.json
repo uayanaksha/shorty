@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "target": "ESNext",
+    "module": "Preserve",
+    "esModuleInterop": true,
+    "moduleDetection": "auto",
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/*": [ "src/*" ]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
