@@ -6,3 +6,11 @@ services:
       - 3300:3300
     env_file: 
       - .env
+
+  cluster:
+    build:
+      dockerfile: Dockerfile.cluster
+    ports:
+      - 6600:6600
+    env_file: 
+      - .env.cluster

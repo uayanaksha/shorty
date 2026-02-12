@@ -21,3 +21,5 @@ app.route('/').get((_req, res) => {
 app.use('/', baseRoute)
 
 app.listen(env.PORT, () => console.log(`server active at ${env.HOST}`))
+
+export default app;
