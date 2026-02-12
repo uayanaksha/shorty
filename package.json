@@ -5,6 +5,7 @@
   "description": "simple url shortner",
   "scripts": {
     "start": "[ -x ./dist/shorty ] && ./dist/shorty",
+    "clean": "rm -rf dist/ node_modules",
     "build": "bun run --env-file .env build.ts",
     "dev": "bun run --env-file .env ./src/server/main.ts"
   },
