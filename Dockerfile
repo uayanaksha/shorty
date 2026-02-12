@@ -11,8 +11,8 @@ FROM oven/bun:alpine AS image
 
 WORKDIR /app
 
-COPY --from=build /app/dist/shorty ./
+COPY --from=build /app/dist/. ./
 
 EXPOSE 3300
 
-CMD ["./shorty"]
+ENTRYPOINT ["./shorty"]
