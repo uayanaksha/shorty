@@ -26,6 +26,4 @@ try {
 } catch (err) {
     console.error((err instanceof String) ? err : "Clustering failed");
     process.exit(1);
-} finally {
-    console.log("Cluster closed");
 }
