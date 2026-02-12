@@ -11,8 +11,8 @@ export async function validateUrl(req: Request, res: Response, next: NextFunctio
             return;
         }
         // Check for 100~399 status-code
-        const status = await (await fetch(url)).status;
-        if (status >= 400) {
+        const status = (await fetch(url)).status;
+        if (status == 404) {
             res.status(status).send("Invalid Url");
             return;
         }
