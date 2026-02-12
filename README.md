@@ -6,6 +6,7 @@
 ![express](https://skillicons.dev/icons?i=express)
 ![mongodb](https://skillicons.dev/icons?i=mongodb)
 ![linux](https://skillicons.dev/icons?i=linux)
+![docker](https://skillicons.dev/icons?i=docker)
 
 ## Quickstart 
 
@@ -15,7 +16,7 @@ cd shorty;
 bun install;
 ```
 
-Add approprite environment variables to .env file
+Add approprite environment variables to `.env` file
 
 ```bash
 PORT=3300
@@ -43,6 +44,37 @@ Run the executable
 ./dist/shorty
 ```
 
+## Cluster mode 
+
+Add approprite environment variables to `.env.cluster` file.
+
+```bash
+PORT=6600
+HOST=http://localhost:6600/
+DB_NAME=<db-name-here>
+DB_URL=mongodb+srv://<username>:<credentials>@<cluster-name>.<hash>.mongodb.net/?appName=<custer-name>
+HASH_KEY=<random-hash-here>
+```
+
+Spawn muliple child processes under a primary process to run in cluster mode 
+
+```bash
+bun run build:cluster
+```
+
+Build a compiled executable
+
+```bash
+bun run build:cluster
+```
+
+Run the executable
+
+```bash
+./dist/shorty-cluster
+```
+
+
 ## Usage 
 
 ```bash
@@ -59,6 +91,8 @@ xdg-open http://localhost:3300/698ccbe8d13d09cef18b831d
 > [!NOTE]
 > `xdg-open` is a linux exlusive utility.
 > macos supports `open` and windows supports `start` command for similar purposes.
+
+## Docker runtime
 
 Run as a docker container using
 
