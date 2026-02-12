@@ -57,8 +57,14 @@ curl --json @sample.json  http://[::1]:3300/
 xdg-open http://localhost:3300/698ccbe8d13d09cef18b831d
 ```
 > [!NOTE]
-> `xdg-open` is a linux exlusive utility
+> `xdg-open` is a linux exlusive utility.
 > macos supports `open` and windows supports `start` command for similar purposes.
+
+Run as a docker container using
+
+```bash
+docker compose up -d
+```
 
 ## Upcomming
 

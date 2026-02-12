@@ -1,0 +1,8 @@
+services:
+  instance:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - 3300:3300
+    env_file: 
+      - .env
