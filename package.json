@@ -6,11 +6,12 @@
   "scripts": {
     "start": "[ -x ./dist/shorty ] && ./dist/shorty",
     "clean": "rm -rf dist/ node_modules",
-    "build": "bun run --env-file .env build.ts",
-    "build:cluster": "bun run --env-file .env build.ts",
+    "build": "bun run --env-file .env ./scripts/build-main.ts",
     "dev": "bun run --env-file .env ./src/server/main.ts",
-    "dev:cluster": "bun run --env-file .env ./src/server/cluster.ts",
     "test": "bun run ./test/autocannon.test.ts",
+    "start:cluster": "[ -x ./dist/shorty-cluster ] && ./dist/shorty-cluster",
+    "build:cluster": "bun run --env-file .env.cluster ./scripts/build-cluster.ts",
+    "dev:cluster": "bun run --env-file .env.cluster ./src/server/cluster.ts",
     "test:cluster": "bun run ./test/autocannon-cluster.test.ts"
   },
   "devDependencies": {

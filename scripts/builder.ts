@@ -1,4 +1,4 @@
-(async () => {
+async function build(OPTS: Bun.BuildConfig){
   let target: Bun.Build.CompileTarget;
   if (process.arch === 'x64') {
     switch (process.platform) {
@@ -16,18 +16,13 @@
 
   const CONFIG: Partial<Bun.BuildConfig> = {
     compile: { target },
-    outdir: "dist"
+    outdir: 'dist/',
   };
-
-  [{
-    entrypoints: ["./src/server/main.ts"],
-    compile: { outfile: "shorty" },
-  }, {
-    entrypoints: ["./src/server/cluster.ts"],
-    compile: { outfile: "shorty-cluster" },
-  }].forEach(async (BuildConfig) => await Bun.build({
+  
+  await Bun.build({
     ...CONFIG,
-    ...BuildConfig
-  }))
+    ...OPTS
+  });
+}
 
-})()
+export default build;
